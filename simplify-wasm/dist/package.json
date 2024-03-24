@@ -1,0 +1,31 @@
+{
+  "name": "simplify-wasm",
+  "collaborators": [
+    "Felix Schütt <felix.schuett@maps4print.com>",
+    "Erik Sombroek <eriksombroek@gmail.com>"
+  ],
+  "description": "Algorithm for converting points to smooth bezier curves, ported from paper.js",
+  "version": "0.1.5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eriksom/simplify-rs"
+  },
+  "files": [
+    "simplify_wasm_bg.wasm",
+    "simplify_wasm.js",
+    "simplify_wasm.d.ts"
+  ],
+  "module": "simplify_wasm.js",
+  "types": "simplify_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "svg",
+    "simplify",
+    "bezier",
+    "svg",
+    "graphics"
+  ]
+}
