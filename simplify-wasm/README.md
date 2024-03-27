@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/simplify-wasm.svg)](https://badge.fury.io/js/simplify-wasm)
+
 # simplify-wasm
 
 This repository contains a WebAssembly (WASM) port of the `simplify-rs` library, offering a robust algorithm for simplifying a path represented by a sequence of points to a sequence of cubic Bezier curves with a specified maximum error tolerance. The original Rust-based library efficiently reduces the complexity of paths while maintaining a high degree of visual fidelity, and this WASM port brings that capability directly to the web, enabling high-performance path simplification directly in the browser.

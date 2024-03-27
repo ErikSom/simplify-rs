@@ -5,22 +5,18 @@
     "Erik Sombroek <eriksombroek@gmail.com>"
   ],
   "description": "Algorithm for converting points to smooth bezier curves, ported from paper.js",
-  "version": "0.1.7",
+  "version": "0.1.10",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/eriksom/simplify-rs"
   },
+  "module": "dist/es/simplify_wasm.js",
+  "main": "dist/umd/simplify_wasm.js",
   "files": [
-    "simplify_wasm_bg.wasm",
-    "simplify_wasm.js",
-    "simplify_wasm.d.ts"
+    "/dist"
   ],
-  "module": "simplify_wasm.js",
-  "types": "simplify_wasm.d.ts",
-  "sideEffects": [
-    "./snippets/*"
-  ],
+  "types": "/dist/es/simplify_wasm.d.ts",
   "keywords": [
     "svg",
     "simplify",

@@ -1,6 +1,6 @@
 [package]
 name = "simplify-wasm"
-version = "0.1.7"
+version = "0.1.9"
 authors = ["Felix Schütt <felix.schuett@maps4print.com>", "Erik Sombroek <eriksombroek@gmail.com>"]
 license = "MIT"
 description = "Algorithm for converting points to smooth bezier curves, ported from paper.js"

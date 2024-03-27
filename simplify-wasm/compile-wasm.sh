@@ -34,13 +34,22 @@ sed -i '' 's/wasm_bindgen/simplify_wasm_factory/g' ./simplify-wasm/dist/umd/simp
 rm ./simplify-wasm/dist/es/.gitignore
 rm ./simplify-wasm/dist/umd/.gitignore
 
-mv ./simplify-wasm/dist/es/package.json ./simplify-wasm/dist/package.json
-mv ./simplify-wasm/dist/es/README.md ./simplify-wasm/dist/README.md
+mv ./simplify-wasm/dist/es/package.json ./simplify-wasm/package.json
+mv ./simplify-wasm/dist/es/README.md ./simplify-wasm/README.md
 
 rm ./simplify-wasm/dist/es/package.json
 rm ./simplify-wasm/dist/es/README.md
 rm ./simplify-wasm/dist/umd/package.json
 rm ./simplify-wasm/dist/umd/README.md
+
+# replace "files:[...]" with "files:['/dist']"
+sed -i '' '/"simplify_wasm_bg.wasm",/d' ./simplify-wasm/package.json
+sed -i '' '/"simplify_wasm.js",/d' ./simplify-wasm/package.json
+sed -i '' 's/"types": "simplify_wasm.d.ts"/"types": "\/dist\/es\/simp_wasm.d.ts"/g' ./simplify-wasm/package.json
+sed -i '' 's/simplify_wasm.d.ts/\/dist/' ./simplify-wasm/package.json
+sed -i '' 's/simp_wasm/simplify_wasm/g' ./simplify-wasm/package.json
+
+
 
 # check if terser is installed
 if ! command -v terser &> /dev/null
