@@ -12,10 +12,16 @@ This repository contains a WebAssembly (WASM) port of the `simplify-rs` library,
 
 ## Usage
 
-First, ensure you have included the `simplify-wasm` module in your project. Then, you can use it in your JavaScript or TypeScript code as follows:
+First, ensure you have included the `simplify-wasm` module in your project.
+```bash
+npm install simplify-wasm
+```
+
+Then, you can use the module in your JavaScript or TypeScript code as follows:
+
 
 ```javascript
-import init, { simplify_js } from '../../simplify_rs.js';
+import init, { simplify_js } from 'simplify_wasm';
 
 async function run() {
     await init(); // Initialize the WASM module
@@ -30,14 +36,30 @@ async function run() {
     // Set the maximum error tolerance for the simplification
     const tolerance = 0.1;
 
-    // Simplify points
-    const simplifiedPoints = simplify_js(points, tolerance, true); // Set `true` to enable automatic scaling
+    // Enable automatic up & down scaling for better precision
+    const auto_scale_for_precision = true;
 
-    console.log(simplifiedPoints);
+    // Simplify points
+    const simplifiedCurves = simplify_js(points, tolerance, auto_scale_for_precision);
+
+    /*
+    The output is a sequence of cubic bezier curves, each represented by 4 points:
+    [{x: 0, y: 0}, {x: 1, y: 1}, {x: 2, y: 2}, {x: 3, y: 3}]
+    [0] = start point
+    [1] = control point 1
+    [2] = control point 2
+    [3] = end point
+    */
+
+    console.log(simplifiedCurves);
 }
 
 run();
 ```
+
+See also
+- [ES6 Example](https://github.com/ErikSom/simplify-rs/blob/master/simplify-wasm/examples/es/index.html)
+- [UMD Example](https://github.com/ErikSom/simplify-rs/blob/master/simplify-wasm/examples/umd/index.html)
 
 ### Parameters
 
