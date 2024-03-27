@@ -3,7 +3,7 @@
 This repository contains a WebAssembly (WASM) port of the `simplify-rs` library, offering a robust algorithm for simplifying a path represented by a sequence of points to a sequence of cubic Bezier curves with a specified maximum error tolerance. The original Rust-based library efficiently reduces the complexity of paths while maintaining a high degree of visual fidelity, and this WASM port brings that capability directly to the web, enabling high-performance path simplification directly in the browser.
 
 # live demo
-[Live Demo](https://eriksom.github.io/simplify-rs/dist/examples/es6/)
+[Live Demo](https://eriksom.github.io/simplify-rs/simplify-wasm/examples/es/)
 
 ## Features
 
